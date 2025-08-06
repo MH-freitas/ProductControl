@@ -1,0 +1,16 @@
+# Ignore arquivos de configuração locais do VS
+.vs/
+*.suo
+*.user
+
+# Ignore binários e builds
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Outros
+*.log
+*.db
+*.lock
