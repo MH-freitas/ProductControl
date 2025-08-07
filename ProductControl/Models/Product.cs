@@ -4,14 +4,81 @@ namespace ProductControl.Models
 {
     public class Product
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-        public string? Name{ get; set; }
+        private Guid _id { get;} = Guid.NewGuid();
 
-        public int Quantity { get; set; }
+        public string? _name{ get; private set; }
 
-        public decimal Price { get; set; }
+        public int _quantity { get; private set; }
+
+        public decimal _price { get; private set; }
         
-        public EProduct Category { get; set; }
+        public EProduct _category { get; private set; }
+
+        public Guid Id
+        {
+            get {return _id;}
+        }
+
+        public string? Name
+        {
+            get { return _name; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Nome não pode ser vazio ou nulo.");
+                }
+                _name = value;
+            }
+        }
+
+        public int Quantity
+        {
+            get { return _quantity; }
+            set
+            {
+                if(value >= 0)
+                {
+                    _quantity = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Quantidade não pode ser negativa.");
+                }
+            }
+        }
+
+        public decimal Price
+        {
+            get { return _price; }
+            set
+            {
+                if (value >= 0)
+                {
+                    _price = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Preço não pode ser negativo.");
+                }
+            }
+        }
+
+        public EProduct Category
+        {
+            get { return _category; }
+            set
+            {
+                if (Enum.IsDefined(typeof(EProduct), value))
+                {
+                    _category = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Categoria inválida.");
+                }
+            }
+        }
 
         public Product() { }
 

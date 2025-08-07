@@ -5,7 +5,7 @@ using ProductControl.Interfaces.Services;
 
 namespace ProductControl.Services
 {
-    public class BeautyDiscount : IBeautyProduct
+    public class BeautyServices : IBeautyProduct
     {
         public EProduct ProductCategory => EProduct.Beauty;
 
@@ -17,6 +17,18 @@ namespace ProductControl.Services
             }
             decimal basePrice = productPrice;
             return basePrice * (1 - discount);
+        }
+
+        public string Ishypoallegenic(bool hypoallegenic)
+        {
+            if (hypoallegenic)
+            {
+                return "Este produto é hipoalergênico.";
+            }
+            else
+            {
+                return "Este produto não é hipoalergênico.";
+            }
         }
     }
 }

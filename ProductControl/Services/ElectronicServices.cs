@@ -3,9 +3,9 @@ using ProductControl.Interfaces.Services;
 
 namespace ProductControl.Services
 {
-    public class FoodDiscount : IFoodProduct
+    public class ElectronicServices : IElectronicsProduct
     {
-        public EProduct ProductCategory => EProduct.Food;
+        public EProduct ProductCategory => EProduct.Electronics;
 
         public decimal ProductDiscount(decimal discount, decimal productPrice)
         {
@@ -15,6 +15,11 @@ namespace ProductControl.Services
             }
             decimal basePrice = productPrice;
             return basePrice * (1 - discount);
+        }
+
+        public DateTime GetWarrantyPeriod(int warranty)
+        {
+            return DateTime.Now.AddYears(warranty);
         }
     }
 }
