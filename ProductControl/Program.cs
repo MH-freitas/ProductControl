@@ -14,10 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
  options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
 
 builder.Services.AddScoped<IProductRepositorie, RepositoryProduct>();
-builder.Services.AddScoped<IBeautyProduct, BeautyDiscount>();
-builder.Services.AddScoped<IClothingProduct, ClothingDiscount>();
-builder.Services.AddScoped<IElectronicsProduct, ElectronicDiscount>();
-builder.Services.AddScoped<IFoodProduct, FoodDiscount>();
+builder.Services.AddScoped<IBeautyProduct, BeautyServices>();
+builder.Services.AddScoped<IClothingProduct, ClothingServices>();
+builder.Services.AddScoped<IElectronicsProduct, ElectronicServices>();
+builder.Services.AddScoped<IFoodProduct, FoodServices>();
 
 builder.Services.AddControllers();
 
