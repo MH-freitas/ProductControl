@@ -62,7 +62,6 @@ namespace ProductControl.Data.Repositories
 
             var product = new Product
             {
-                Id = Guid.NewGuid(),
                 Name = name,
                 Quantity = quatity,
                 Price = price,
