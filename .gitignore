@@ -15,4 +15,5 @@ obj/
 *.db
 *.lock
 
-*.appsetting.json
+# Ignorar todos os appsettings
+appsettings*.json
