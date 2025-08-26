@@ -15,4 +15,4 @@ obj/
 *.db
 *.lock
 
-appsetting.json
+*.appsetting.json
